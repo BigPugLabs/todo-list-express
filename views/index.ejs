@@ -20,6 +20,9 @@
 <body>
     <h1>Todo List: </h1>
     <ul class="todoItems">
+    <!-- EJS generated code below, loop through an array named items and create li blocks with
+    spans inside, if the item.completed property is true set the class on the span to completed
+    else have the span with no class set-->
     <% for(let i=0; i < items.length; i++) {%>
         <li class="item">
             <% if(items[i].completed === true) {%>
@@ -32,16 +35,18 @@
     <% } %>
     </ul>
 
+    <!-- EJS gets the count of uncompleted to-dos straight from the database before page is rendered -->
     <h2>Left to do: <%= left %></h2>
 
     <h2>Add A Todo:</h2>
-
+    
+    <!-- our post method to send new items to the backend -->
     <form action="/addTodo" method="POST">
         <input type="text" placeholder="Thing To Do" name="todoItem">
         <input type="submit">
     </form>
     
-
+    <!-- the js file will add eventListeners to the page to enable interaction with the backend via HTTP methods -->
     <script src='js/main.js'></script>
 </body>
 </html>
