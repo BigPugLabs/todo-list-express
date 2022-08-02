@@ -1,6 +1,10 @@
+/* classic Noel red h1, more to highlight that there is actual css here */
 h1{
     color: red;
 }
+
+/* class of completed should fade and have a line through it */
+
 .completed{
     color: gray;
     text-decoration: line-through;
